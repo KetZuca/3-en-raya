@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
 using namespace std;
+void mostrarTablero(char[3][3]);
 
 int main() {
     int fila, columna, contador = 1, max = 9;
@@ -13,23 +14,8 @@ int main() {
         filasV = false;
         columnasV = false;
 
-        cout << "     1   2   3\n"; 
-        cout << "   -------------\n";
-        cout << " 1"
-            << " | " << tablero[0][0] << " | " << tablero[0][1] << " | "
-            << tablero[0][2] << " | " << endl;
-        cout << "   -------------\n";
-
-        cout << " 2"
-            << " | " << tablero[1][0] << " | " << tablero[1][1] << " | "
-            << tablero[1][2] << " | " << endl;
-        cout << "   -------------\n";
-
-        cout << " 3"
-            << " | " << tablero[2][0] << " | " << tablero[2][1] << " | "
-            << tablero[2][2] << " | " << endl;
-        cout << "   -------------\n";
-
+        mostrarTablero(tablero);
+        
         cout << "Jugador ";
         if(jugador == 'X') {
             cout << 'X';
@@ -73,22 +59,7 @@ int main() {
                 }
             } else {
                 cout << "El espacio esta ocupado\nSelecciona otro espacio:\n\n";
-                cout << "     1   2   3\n"; 
-                cout << "   -------------\n";
-                cout << " 1"
-                    << " | " << tablero[0][0] << " | " << tablero[0][1] << " | "
-                    << tablero[0][2] << " | " << endl;
-                cout << "   -------------\n";
-
-                cout << " 2"
-                    << " | " << tablero[1][0] << " | " << tablero[1][1] << " | "
-                    << tablero[1][2] << " | " << endl;
-                cout << "   -------------\n";
-
-                cout << " 3"
-                    << " | " << tablero[2][0] << " | " << tablero[2][1] << " | "
-                    << tablero[2][2] << " | " << endl;
-                cout << "   -------------\n";
+                mostrarTablero(tablero);
             }
         }
 
@@ -117,23 +88,7 @@ int main() {
 
 
         if(ganador == 'X' || ganador == 'O') {
-                cout << "     1   2   3\n"; 
-                cout << "   -------------\n";
-                cout << " 1"
-                    << " | " << tablero[0][0] << " | " << tablero[0][1] << " | "
-                    << tablero[0][2] << " | " << endl;
-                cout << "   -------------\n";
-
-                cout << " 2"
-                    << " | " << tablero[1][0] << " | " << tablero[1][1] << " | "
-                    << tablero[1][2] << " | " << endl;
-                cout << "   -------------\n";
-
-                cout << " 3"
-                    << " | " << tablero[2][0] << " | " << tablero[2][1] << " | "
-                    << tablero[2][2] << " | " << endl;
-                cout << "   -------------\n";
-
+                mostrarTablero(tablero);
                 cout << "Felicidades Jugador ";
                 if(ganador == 'X') {
                     cout << 'X';
@@ -144,22 +99,7 @@ int main() {
                 break;
         } 
         if(contador == max) {
-                cout << "     1   2   3\n"; 
-                cout << "   -------------\n";
-                cout << " 1"
-                    << " | " << tablero[0][0] << " | " << tablero[0][1] << " | "
-                    << tablero[0][2] << " | " << endl;
-                cout << "   -------------\n";
-
-                cout << " 2"
-                    << " | " << tablero[1][0] << " | " << tablero[1][1] << " | "
-                    << tablero[1][2] << " | " << endl;
-                cout << "   -------------\n";
-
-                cout << " 3"
-                    << " | " << tablero[2][0] << " | " << tablero[2][1] << " | "
-                    << tablero[2][2] << " | " << endl;
-                cout << "   -------------\n";
+                mostrarTablero(tablero);
                 cout << "Es un empate!\n";
                 break;
         }
@@ -167,4 +107,23 @@ int main() {
     }
     system("pause");
     return 0;
+}
+
+void mostrarTablero(char tablero[3][3]) {
+    cout << "     1   2   3\n"; 
+    cout << "   -------------\n";
+    cout << " 1"
+         << " | " << tablero[0][0] << " | " << tablero[0][1] << " | "
+         << tablero[0][2] << " | " << endl;
+    cout << "   -------------\n";
+
+    cout << " 2"
+         << " | " << tablero[1][0] << " | " << tablero[1][1] << " | "
+         << tablero[1][2] << " | " << endl;
+    cout << "   -------------\n";
+
+    cout << " 3"
+         << " | " << tablero[2][0] << " | " << tablero[2][1] << " | "
+         << tablero[2][2] << " | " << endl;
+    cout << "   -------------\n";
 }
